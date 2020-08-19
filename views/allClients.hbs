@@ -1,0 +1,125 @@
+<link rel="stylesheet" href="/css/cover.css">
+
+  <style>
+    .navbar{
+      color: #333;
+    }
+
+    .cover-container{
+      margin-top: 50px;
+    }
+
+    body{
+      height: 110%;
+    }
+
+    .card{
+      background-color: wheat;
+      float: none;
+      height: 400%;
+      margin-left: auto;
+      margin-right: auto;
+    }
+  </style>
+
+      {{!-.card- width: 60rem; --}}
+<!-- Navigation -->
+
+<nav class="navbar navbar-expand-lg navbar-dark shadow fixed-top">
+  <div class="container">
+    <a class="navbar-brand" href="/admins/dashboard">Admin Dashboard</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+    <div class="collapse navbar-collapse" id="navbarResponsive">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="/admins/deposit">Deposit
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/admins/withdrawal">Withdrawal</a>
+        </li>
+        <li class="nav-item active">
+          <a class="nav-link" href="/admins/allClients">All Clients
+            <span class="sr-only">(current)</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/admins/allDeposits">All Deposits</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/admins/allWithdrawals">All Withdrawals</a>
+        </li>
+      </ul>
+    </div>
+
+    <div>
+      <a class="btn btn-outline-danger" href="/admins/logout" role="button">Logout</a>
+    </div>
+  </div>
+</nav>
+
+<div class="cover-container d-flex w-100 h-50 p-3 mx-auto flex-column">
+
+  <div class="card text-center w-75 text-black-50">
+    <h5 class="card-header text-black-50">All Clients</h5>
+    <div class="card-body">
+      
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th scope="col">ID</th>
+            <th scope="col">Full Name</th>
+            <th scope="col">Email</th>
+            <th scope="col">Phone</th>
+            <th scope="col">N.O.K</th>
+            <th scope="col">N.O.K Phone</th>
+          </tr>
+        </thead>
+        <tbody>
+
+        {{#each results.results as |obj|}}
+          {{#if obj}}
+            <tr>
+              <th scope="row">{{this.dataValues.id}}</th>
+              <td>{{this.dataValues.firstName}} {{this.dataValues.lastName}}</td>
+              <td>{{this.dataValues.email}}</td>
+              <td>{{this.dataValues.phone}}</td>
+              <td>{{this.dataValues.nok}}</td>
+              <td>{{this.dataValues.nokPhone}}</td>
+            </tr>
+          {{/if}}
+        {{/each}}
+
+        </tbody>
+      </table>
+
+        <div class="form-row">
+          <div class="form-group col-md-8">
+            <nav aria-label="Page navigation example">
+              <ul class="pagination justify-content-center">
+                <li class="page-item">
+                  <a class="page-link" href="#" aria-label="Previous">
+                    <span aria-hidden="true">&laquo;</span>
+                    <span class="sr-only">Previous</span>
+                  </a>
+                </li>
+                <li class="page-item"><a class="page-link" href="/admins/allClients?page=1">1</a></li>
+                <li class="page-item active"><a class="page-link" href="/admins/allClients?page=2">2<span class="sr-only">(current)</span></a></li>
+                <li class="page-item"><a class="page-link" href="/admins/allClients?page=3">3</a></li>
+                <li class="page-item">
+                  <a class="page-link" href="#" aria-label="Next">
+                    <span aria-hidden="true">&raquo;</span>
+                    <span class="sr-only">Next</span>
+                  </a>
+                </li>
+              </ul>
+            </nav>
+          </div>
+        </div>
+
+    </div>
+  </div>
+
+</div>

@@ -1,0 +1,176 @@
+<link rel="stylesheet" href="/css/cover.css">
+
+  <style>
+    .navbar{
+      color: #333;
+    }
+
+    .cover-container{
+      margin-top: 100px;
+    }
+
+    body{
+      height: 100%;
+    }
+
+    select { 
+      margin-left: auto;
+      margin-right: auto; 
+    }
+    option {
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .card{
+      color:#333;
+      float: none;
+      margin-left: auto;
+      margin-right: auto;
+    }
+  </style>
+
+<!-- Navigation -->
+
+<nav class="navbar navbar-expand-lg navbar-dark shadow fixed-top">
+  <div class="container">
+    <a class="navbar-brand" href="/admins/dashboard">Admin Dashboard</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+    <div class="collapse navbar-collapse" id="navbarResponsive">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item active">
+          <a class="nav-link" href="/admins/deposit">Deposit
+            <span class="sr-only">(current)</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/admins/withdrawal">Withdrawal</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/admins/allClients">All Clients</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/admins/allDeposits">All Deposits</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/admins/allWithdrawals">All Withdrawals</a>
+        </li>
+      </ul>
+    </div>
+
+    <div>
+      <a class="btn btn-outline-danger" href="/admins/logout" role="button">Logout</a>
+    </div>
+  </div>
+</nav>
+
+<div class="cover-container d-flex w-100 h-50 p-3 mx-auto flex-column">
+
+  {{!-- <main role="main" class="inner cover">
+    <h1 class="cover-heading">Cover your page.</h1>
+    <p class="lead">Cover is a one-page template for building simple and beautiful home pages. Download, edit the text, and add your own fullscreen background photo to make it your own.</p>
+    <p class="lead">
+      <a href="#" class="btn btn-lg btn-secondary">Learn more</a>
+    </p>
+  </main> --}}
+
+  {{!-- <div class="card text-black-50" style="background-color: white;">
+    <div class="card-title text-center">Make Deposit</div>
+    <div class="card-body">
+      <fieldset>
+        <input type="text" name="fname" id="fname">
+      </fieldset>
+    </div>
+  </div> --}}
+
+  <div class="col-auto">
+    <div class="card text-center w-75" style="background-color: wheat;">
+      <div class="card-header text-black-50">
+        Make Deposit
+      </div>
+      <div class="card-body">
+        <form action="/deposit/make/" method="POST">
+          <div class="form-row">
+            <div class="form-group col-md-6">
+              <label for="fullName">Full Name</label>
+              <input type="text" class="form-control" id="fullName" name="fullName" placeholder="FirstName   LastName   OtherNames" style="text-align:center" value={{fullName}}>
+            </div>
+            <div class="form-group col-md-6">
+              <label for="email">Email</label>
+              <input type="email" class="form-control" id="email" name="email" style="text-align:center" value={{email}}>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group col-md-4">
+              <label for="contact">Phone</label>
+              <input type="tel" class="form-control" id="phone" name="phone" style="text-align:center" value={{phone}}>
+            </div>
+            <div class="form-group col-md-4">
+              <label for="amount">Amount to Invest</label>
+              <input type="number" class="form-control" id="amount" name="amount" style="text-align:center" value={{amount}}>
+            </div>
+            <div class="form-group col-md-4">
+              <label>Duration (days)</label>
+              <select id="duration" class="form-control" name="duration" style="text-align:center" required>
+                <option value="0"></option>
+                <option value="91">91 days / 3 Months</option>
+                <option value="182">181 days / 6 Months</option>
+                <option value="273">273 days / 9 Months</option>
+                <option value="364">364 days / 12 Months</option>
+              </select>
+            </div>          
+          </div>
+          
+          <div class="form-row">
+            <div class="form-group col-md-4">
+              <label for="interest">Interest</label>
+              <input readonly type="number" class="form-control" id="interest" name="interest" style="text-align:center" value={{interest}}>
+            </div>
+            {{!-- <div class="form-group col-md-4">
+              <label>Duration (days)</label>
+              <select id="duration" class="form-control" name="duration" required>
+                <option value="0"></option>
+                <option value="91">91 days</option>
+                <option value="182">181 days</option>
+                <option value="273">273 days</option>
+                <option value="364">364 days</option>
+              </select>
+            </div> --}}
+
+            <div class="form-group col-md-4">
+              <label for="maturity">Maturity</label>
+              <input readonly type="text" class="form-control" id="maturity" name="maturity" style="text-align:center" value="">
+            </div>
+
+            <div class="form-group col-md-4">
+              <label for="redemptionValue">Total Value</label>
+              <input readonly type="number" class="form-control" id="redemptionValue" name="redemptionValue" style="text-align:center" value="{{redemptionValue}}">
+            </div>
+          </div>
+
+          {{!-- <div class="form-row">
+            
+
+            <div class="form-group col-md-6">
+              <label for="amt">Amount to Invest</label>
+              <select id="amount" class="form-control" name="amount" value={{amount}} required>
+                <option></option>
+                <option>$20,000 - $50,000</option>
+                <option>$50,000 -$100,000</option>
+                <option>$100,000 - $1,000,000</option>
+                <option>$1,000,000 -</option>
+              </select>
+            </div>
+          </div> --}}
+        </form>
+        <a href="#" class="btn btn-success">Deposit</a>
+    </div>
+  </div>
+
+  </div>
+
+</div>
+
+<script src="/js/dep.js"></script>

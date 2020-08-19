@@ -1,0 +1,89 @@
+<link rel="stylesheet" href="/css/cover.css">
+
+  <style>
+    .navbar{
+      color: #333;
+    }
+
+    .cover-container{
+      margin-top: 100px;
+    }
+
+    .card{
+      background-color: #333;
+      float: none;
+      margin-left: auto;
+      margin-right: auto;
+    }
+  </style>
+
+<!-- Navigation -->
+
+<nav class="navbar navbar-expand-lg navbar-dark shadow fixed-top">
+  <div class="container">
+    <a class="navbar-brand" href="/admins/dashboard">Admin Dashboard</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+    <div class="collapse navbar-collapse" id="navbarResponsive">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="/admins/deposit">Deposit
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/admins/withdrawal">Withdrawal</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/admins/allClients">All Clients</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/admins/allDeposits">All Deposits</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/admins/allWithdrawals">All Withdrawals</a>
+        </li>
+      </ul>
+    </div>
+
+    <div>
+      <a class="btn btn-outline-danger" href="/admins/logout" role="button">Logout</a>
+    </div>
+  </div>
+</nav>
+
+<div class="cover-container d-flex w-50 h-50 p-3 mx-auto flex-column">
+
+  <main role="main" class="inner cover">
+    {{!-- <h1 class="cover-heading">Cover your page.</h1>
+    <p class="lead">Canvas Charts will be displayed here. Most Admin Cool UI designs will be here</p>
+    <p class="lead">
+      <a href="#" class="btn btn-lg btn-secondary">Admin</a>
+    </p> --}}
+
+<nav>
+  <div class="nav nav-tabs nav-justified justify-content-center" id="nav-tab" role="tablist">
+    <a class="nav-item nav-link active" id="nav-home-tab" data-toggle="tab" href="#nav-home" role="tab" aria-controls="nav-home" aria-selected="true">Home <i class="fa fa-home" aria-hidden="true"></i></a>
+    <a class="nav-item nav-link" id="nav-profile-tab" data-toggle="tab" href="#nav-profile" role="tab" aria-controls="nav-profile" aria-selected="false">Profile <i class="fa fa-user" aria-hidden="true"></i></a>
+    <a class="nav-item nav-link" id="nav-message-tab" data-toggle="tab" href="#nav-message" role="tab" aria-controls="nav-message" aria-selected="false">Messages <i class="fa fa-envelope" aria-hidden="true"></i></a>
+    <a class="nav-item nav-link" id="nav-alert-tab" data-toggle="tab" href="#nav-alert" role="tab" aria-controls="nav-alert" aria-selected="false">Alerts <i class="fa fa-bell" aria-hidden="true"></i></a>
+    <a class="nav-item nav-link" id="nav-todo-tab" data-toggle="tab" href="#nav-todo" role="tab" aria-controls="nav-todo" aria-selected="false">To Do's <i class="fa fa-list" aria-hidden="true"></i></a>
+  </div>
+</nav>
+<div class="tab-content" id="nav-tabContent">
+  <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">Graphical Admin UI stuff for glory and for beauty</div>
+  <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">Check Admin Profile</div>
+  <div class="tab-pane fade" id="nav-message" role="tabpanel" aria-labelledby="nav-message-tab">Read and Send Messages Here</div>
+  <div class="tab-pane fade" id="nav-alert" role="tabpanel" aria-labelledby="nav-alert-tab">Alerts Come Here</div>
+  <div class="tab-pane fade" id="nav-todo" role="tabpanel" aria-labelledby="nav-todo-tab">To Do List Goes Here</div>
+</div>
+
+
+  </main>
+
+  {{!-- <footer class="mastfoot mt-auto">
+    <div class="inner">
+      <p>Cover template for <a href="https://getbootstrap.com/">Bootstrap</a>, by <a href="https://twitter.com/mdo">@mdo</a>.</p>
+    </div>
+  </footer> --}}
+</div>
